@@ -209,8 +209,7 @@
 
   @media(max-width:440px) { .grid { grid-template-columns:1fr; } .start-wrap { min-height:220px; } }
 
-
-  /* RADIO ORIENTAL: CARRUSEL MUSICAL */
+  /* RADIO ORIENTAL */
   .radio-section {
     margin-top: 34px;
     padding: clamp(18px, 4vw, 28px);
@@ -234,65 +233,6 @@
     font-size: .75rem;
     line-height: 1.6;
   }
-  .radio-player {
-    display: grid;
-    grid-template-columns: 42px minmax(0, 1fr) 42px;
-    align-items: center;
-    gap: 10px;
-  }
-  .radio-arrow {
-    width: 42px;
-    height: 52px;
-    display: grid;
-    place-items: center;
-    padding: 0;
-    font: bold 1.5rem "Courier New", monospace;
-    color: var(--white);
-    background: rgba(41, 23, 67, .9);
-    border: 2px solid var(--lilac);
-    box-shadow: 3px 3px 0 rgba(168, 121, 255, .45);
-    cursor: pointer;
-    touch-action: manipulation;
-  }
-  .radio-arrow:hover, .radio-arrow:focus-visible {
-    color: var(--cyan);
-    border-color: var(--pink);
-    outline: none;
-  }
-  .radio-card {
-    min-width: 0;
-    padding: 16px;
-    border: 1px dashed var(--line);
-    background: rgba(29, 18, 48, .68);
-    animation: radioAppear .3s ease-out;
-  }
-  .radio-cover {
-    width: min(210px, 100%);
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    display: block;
-    margin: 0 auto 14px;
-    border: 2px solid var(--purple);
-    box-shadow: 0 0 15px rgba(168, 121, 255, .35);
-  }
-  .radio-track-label {
-    color: var(--cyan);
-    font-size: .65rem;
-    letter-spacing: .16em;
-    margin-bottom: 9px;
-  }
-  .radio-track-title {
-    color: var(--white);
-    font-size: clamp(.95rem, 3vw, 1.15rem);
-    font-weight: bold;
-    line-height: 1.4;
-    overflow-wrap: anywhere;
-  }
-  .radio-track-artist {
-    color: var(--muted);
-    font-size: .8rem;
-    margin-top: 5px;
-  }
   .radio-listen {
     display: inline-flex;
     justify-content: center;
@@ -307,12 +247,6 @@
     letter-spacing: .06em;
   }
   .radio-listen:hover { color: var(--cyan); border-color: var(--pink); }
-  .radio-dots { display: flex; justify-content: center; gap: 7px; margin-top: 16px; }
-  .radio-dot {
-    width: 8px; height: 8px; padding: 0; border: 1px solid var(--lilac);
-    background: transparent; cursor: pointer;
-  }
-  .radio-dot.active { background: var(--pink); border-color: var(--pink); box-shadow: 0 0 8px var(--pink); }
   .radio-embed-frame {
     width: 100%;
     max-width: 520px;
@@ -343,13 +277,6 @@
     white-space: nowrap;
   }
   .radio-note a:hover { color: var(--pink); text-decoration: underline; }
-  @keyframes radioAppear { from { opacity: .45; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
-  @media(max-width: 440px) {
-    .radio-player { grid-template-columns: 34px minmax(0, 1fr) 34px; gap: 6px; }
-    .radio-arrow { width: 34px; height: 46px; }
-    .radio-card { padding: 12px 8px; }
-  }
-
 </style>
 </head>
 <body>
@@ -419,22 +346,12 @@
     </div>
   </section>
 
-
   <!-- RADIO ORIENTAL: PLAYLIST DINÁMICA DE SPOTIFY y LINK SPOTIFY --> 
   <section class="radio-section" id="radioOriental" aria-label="Radio Oriental">
     <h2 class="radio-title">♫ RADIO ORIENTAL ♫</h2>
     <p class="radio-subtitle">DESCUBRÍ MÚSICA · ARTISTAS DE TODAS PARTES · PEGANDOLE AL PERRO</p>
     <div class="radio-embed-frame">
-      <iframe
-        title="Playlist Radio Oriental en Spotify"
-        style="border-radius:12px; display:block; width:100%; height:352px; border:0;"
-        src="<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6oH1bLHOKZnIi9641ZXWlr?utm_source=generator&si=c107aff3ce68406a" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>"
-        width="100%"
-        height="352"
-        loading="lazy"
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-        allowfullscreen>
-      </iframe>
+      <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6oH1bLHOKZnIi9641ZXWlr?utm_source=generator&si=c107aff3ce68406a" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
     <a class="radio-listen radio-playlist-link" href="https://open.spotify.com/playlist/6oH1bLHOKZnIi9641ZXWlr" target="_blank" rel="noopener">▶ ABRIR RADIO ORIENTAL EN SPOTIFY</a>
     <div class="radio-note">
@@ -457,7 +374,7 @@
   <p class="dialog-text">SantiAM representa un camino de crecimiento, experimentación y búsqueda de una identidad propia. Un proyecto construido canción a canción, con dedicación, pasión y el deseo de llevar su música cada vez más lejos, sin perder aquello que le da sentido: sentir lo que hace y transmitirlo de verdad.</p>
 </dialog>
 
-<!-- MODAL PRÓXIMAMENTE (CON EL CASSETTE Y EL EP ORIGINAL) -->
+<!-- MODAL PRÓXIMAMENTE -->
 <dialog id="comingDialog">
   <button class="pixel-btn close" id="closeComing" type="button">X</button>
   <h2 class="dialog-head">▤ PRÓXIMAMENTE</h2>
@@ -478,7 +395,6 @@
   function enterMenu(e) {
     if (e) e.preventDefault();
     
-    // Activar fundido a negro en toda la pantalla
     transitionScreen.classList.add('active');
 
     setTimeout(() => {
@@ -487,7 +403,6 @@
       menu.classList.add('fade-in');
       window.scrollTo({top: 0, behavior: 'smooth'});
       
-      // Quitar el negro para mostrar el menú con fundido de entrada
       transitionScreen.classList.remove('active');
     }, 300);
   }
@@ -512,68 +427,6 @@
   bindBtn(comingBtn, () => comingDialog.showModal());
   bindBtn(closeAboutBtn, () => aboutDialog.close());
   bindBtn(closeComingBtn, () => comingDialog.close());
-
-  // RADIO ORIENTAL: agregá canciones editando esta lista.
-  // Cada canción necesita título, artista, imagen y enlace.
-  const radioSongs = [
-    {
-      title: 'Ojos Café',
-      artist: 'SantiAM',
-      image: 'ojos_cafe.png',
-      url: 'https://open.spotify.com/intl-es/track/5pavxiRdhxx8lPfQddDNYj?si=01784d34cab041f2'
-    }
-    // Para sumar temas, agregá una coma después del objeto anterior y otro objeto:
-    // ,{ title: 'Nombre de la canción', artist: 'Artista', image: 'portada.jpg', url: 'https://...' }
-  ];
-  const radioCover = document.getElementById('radioCover');
-  const radioTrackTitle = document.getElementById('radioTrackTitle');
-  const radioTrackArtist = document.getElementById('radioTrackArtist');
-  const radioListen = document.getElementById('radioListen');
-  const radioDots = document.getElementById('radioDots');
-  const radioCard = document.getElementById('radioCard');
-  let radioIndex = 0;
-  let radioTimer;
-
-  function showRadioSong(index) {
-    radioIndex = (index + radioSongs.length) % radioSongs.length;
-    const song = radioSongs[radioIndex];
-    radioCover.src = song.image;
-    radioCover.alt = `Portada de ${song.title}`;
-    radioTrackTitle.textContent = song.title;
-    radioTrackArtist.textContent = song.artist;
-    radioListen.href = song.url;
-    radioDots.querySelectorAll('button').forEach((dot, i) => {
-      dot.classList.toggle('active', i === radioIndex);
-      dot.setAttribute('aria-current', i === radioIndex ? 'true' : 'false');
-    });
-    radioCard.style.animation = 'none';
-    void radioCard.offsetWidth;
-    radioCard.style.animation = '';
-  }
-
-  function buildRadioDots() {
-    radioDots.replaceChildren();
-    radioSongs.forEach((song, i) => {
-      const dot = document.createElement('button');
-      dot.type = 'button';
-      dot.className = 'radio-dot';
-      dot.setAttribute('aria-label', `Reproducir selección ${i + 1}: ${song.title}`);
-      dot.addEventListener('click', () => { showRadioSong(i); restartRadioTimer(); });
-      radioDots.appendChild(dot);
-    });
-  }
-
-  function restartRadioTimer() {
-    clearInterval(radioTimer);
-    if (radioSongs.length > 1) radioTimer = setInterval(() => showRadioSong(radioIndex + 1), 8000);
-  }
-
-  document.getElementById('radioPrev').addEventListener('click', () => { showRadioSong(radioIndex - 1); restartRadioTimer(); });
-  document.getElementById('radioNext').addEventListener('click', () => { showRadioSong(radioIndex + 1); restartRadioTimer(); });
-  buildRadioDots();
-  showRadioSong(0);
-  restartRadioTimer();
-
 </script>
 </body>
 </html>
